@@ -5,6 +5,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Test_WinForm_NetStandard_MySqlConnector_</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>MySqlBackupTestApp</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +14,10 @@
 
   <ItemGroup>
     <Content Include="logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MySqlBackup(NetStandard,MySqlConnector)\MySqlBackup(NetStandard,MySqlConnector).csproj" />
   </ItemGroup>
 
   <ItemGroup>

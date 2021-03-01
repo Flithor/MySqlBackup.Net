@@ -2,7 +2,7 @@
 using System.Timers;
 using System.Collections.Generic;
 using System.Text;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 using System.ComponentModel;
 using System.IO;
 using System.IO.Compression;
@@ -10,7 +10,7 @@ using System.Globalization;
 using System.Security.Cryptography;
 using System.Reflection;
 
-namespace MySql.Data.MySqlClient
+namespace MySqlConnector
 {
     public class MySqlBackup : IDisposable
     {
@@ -71,7 +71,7 @@ namespace MySql.Data.MySqlClient
         long _currentBytes = 0L;
         long _totalBytes = 0L;
         StringBuilder _sbImport = null;
-        MySqlScript _mySqlScript = null;
+        //MySqlScript _mySqlScript = null;
         string _delimiter = "";
 
         enum NextImportAction
@@ -1237,7 +1237,7 @@ namespace MySql.Data.MySqlClient
             timeStart = DateTime.Now;
             _currentBytes = 0L;
             _sbImport = new StringBuilder();
-            _mySqlScript = new MySqlScript(Command.Connection);
+            //_mySqlScript = new MySqlScript(Command.Connection);
             currentProcess = ProcessType.Import;
             processCompletionType = ProcessEndType.Complete;
             _delimiter = ";";
@@ -1411,9 +1411,11 @@ namespace MySql.Data.MySqlClient
 
             //if (!skipexecute)
             //{
-            _mySqlScript.Query = _importQuery;
-            _mySqlScript.Delimiter = _delimiter;
-            _mySqlScript.Execute();
+            //_mySqlScript.Query = _importQuery;
+            //_mySqlScript.Delimiter = _delimiter;
+            //_mySqlScript.Execute();
+            Command.CommandText = _importQuery;
+            Command.ExecuteNonQuery();
             //}
 
             //_sbImport.Clear();
@@ -1719,7 +1721,8 @@ namespace MySql.Data.MySqlClient
 
             try
             {
-                _mySqlScript = null;
+                //_mySqlScript = null;
+                Command?.Dispose();
             }
             catch { }
         }

@@ -4,7 +4,7 @@ using System.Text;
 using System.Data;
 using System.Collections;
 
-namespace MySql.Data.MySqlClient
+namespace MySqlConnector
 {
     public class MySqlTableList : IDisposable, IEnumerable<MySqlTable>
     {

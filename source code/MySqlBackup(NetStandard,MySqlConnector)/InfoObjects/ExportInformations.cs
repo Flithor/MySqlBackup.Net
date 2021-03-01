@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MySql.Data.MySqlClient
+namespace MySqlConnector
 {
     /// <summary>
     /// Informations and Settings of MySQL Database Export Process
