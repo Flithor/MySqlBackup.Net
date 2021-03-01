@@ -5,7 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+
+using MySqlConnector;
 
 namespace MySqlBackupTestApp
 {
@@ -22,7 +23,8 @@ namespace MySqlBackupTestApp
 
         private void btScript_Click(object sender, EventArgs e)
         {
-            ExecuteSQL(2);
+            throw new NotImplementedException();
+            //ExecuteSQL(2);
         }
 
         private void btSQL_Click(object sender, EventArgs e)
@@ -59,13 +61,14 @@ namespace MySqlBackupTestApp
 
                     if (q == 2)
                     {
-                        MySqlScript script = new MySqlScript(conn);
-                        script.Query = sql;
-                        int i = script.Execute();
-                        dt = new DataTable();
-                        dt.Columns.Add("Result");
-                        dt.Rows.Add(i + " statement(s) executed.");
-                        BindData();
+                        throw new NotImplementedException();
+                        //MySqlScript script = new MySqlScript(conn);
+                        //script.Query = sql;
+                        //int i = script.Execute();
+                        //dt = new DataTable();
+                        //dt.Columns.Add("Result");
+                        //dt.Rows.Add(i + " statement(s) executed.");
+                        //BindData();
                     }
                     else
                     {

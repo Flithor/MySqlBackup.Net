@@ -25,7 +25,7 @@ www.mysqlbackup.net
 
 Freeware
 
-Loaded MySqlBackup.DLL Version: {2}", Program.Version, Program.DateVersion, MySql.Data.MySqlClient.MySqlBackup.Version);
+Loaded MySqlBackup.DLL Version: {2}", Program.Version, Program.DateVersion, MySqlConnector.MySqlBackup.Version);
         }
     }
 }

@@ -17,7 +17,7 @@ namespace MySqlBackupTestApp
         public FormMain()
         {
             InitializeComponent();
-            this.Text = "MySqlBackup.NET Testing Tool: " + Program.Version + ", Loaded MySqlBackup.DLL Version: " + MySql.Data.MySqlClient.MySqlBackup.Version;
+            this.Text = "MySqlBackup.NET Testing Tool: " + Program.Version + ", Loaded MySqlBackup.DLL Version: " + MySqlConnector.MySqlBackup.Version;
             LoadSettings();
         }
 

@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 using System.Security.Cryptography;
 
 namespace MySqlBackupTestApp
@@ -117,7 +117,7 @@ ENGINE = InnoDB;";
             string head = sb.ToString();
             string values = sb2.ToString();
 
-            int maxlength = 1024*1024;
+            int maxlength = 1024 * 1024;
 
             using (MySqlConnection conn = new MySqlConnection(Program.ConnectionString))
             {
@@ -193,11 +193,10 @@ ENGINE = InnoDB;";
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(Program.ConnectionString))
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
-                    MySqlScript script = new MySqlScript(conn);
-                    script.Query = sql;
-                    script.Execute();
-                    script = null;
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
                 }
                 MessageBox.Show("Done");
             }

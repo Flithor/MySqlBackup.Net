@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 using System.Reflection;
 
 namespace MySqlBackupTestApp
@@ -19,7 +19,7 @@ namespace MySqlBackupTestApp
         public FormConnStringBuilder(string cstr)
         {
             InitializeComponent();
-            
+
             List<string> lst = new List<string>();
 
             MySqlConnectionStringBuilder msb = new MySqlConnectionStringBuilder(cstr);
@@ -31,7 +31,7 @@ namespace MySqlBackupTestApp
                 if (!prop.CanWrite)
                     continue;
 
-                switch(prop.Name)
+                switch (prop.Name)
                 {
                     case "Server":
                     case "UserID":
@@ -167,7 +167,8 @@ namespace MySqlBackupTestApp
                 }
             }
 
-            ConnStr = sb.GetConnectionString(true);
+            //ConnStr = sb.GetConnectionString(true);
+            ConnStr = sb.ToString();
 
             this.DialogResult = DialogResult.OK;
         }
