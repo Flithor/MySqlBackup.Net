@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 using System.Security.Cryptography;
 
 namespace System.Security.Cryptography

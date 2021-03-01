@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 
-namespace MySql.Data.MySqlClient
+namespace MySqlConnector
 {
     public class MySqlTable : IDisposable
     {

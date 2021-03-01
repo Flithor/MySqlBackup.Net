@@ -2,7 +2,7 @@
 using System.Timers;
 using System.Collections.Generic;
 using System.Text;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 using System.ComponentModel;
 using System.IO;
 using System.IO.Compression;
@@ -10,7 +10,7 @@ using System.Globalization;
 using System.Security.Cryptography;
 using System.Reflection;
 
-namespace MySql.Data.MySqlClient
+namespace MySqlConnector
 {
     public class MySqlBackup : IDisposable
     {
